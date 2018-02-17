@@ -11,9 +11,12 @@
     <title>{{ config('app.name', 'Hundred Peaks Section') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
-    <!--[if lte IE 9]><link href="{{ asset('css/ie9.css') }}" rel="stylesheet"/><![endif]-->
-    <!--[if lte IE 8]><link href="{{ asset('css/ie8.css') }}" rel="stylesheet"/><![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bulma.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     @stack('styles')
 </head>
 <body>

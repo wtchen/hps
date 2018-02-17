@@ -1,4 +1,4 @@
-<footer id="footer">
+<!--<footer id="footer">
     <div class="inner">
         <section class="info">
             <div class="about">
@@ -46,4 +46,4 @@
     <div class="copyright">
         &copy; {{ date('Y') }} Hundred Peaks Section. All rights reserved.
     </div>
-</footer>
+</footer> -->
