@@ -2,6 +2,10 @@ body {
     background: #EBEAE4;
 }
 
+.navbar-burger {
+    height: auto;
+}
+
 .hps-logo {
     font-family: "Alegreya Sans SC", Georgia, serif;
     font-size: 1.5rem;
@@ -21,11 +25,11 @@ body {
     background: url(/images/baldy.jpg);
     background-size: cover;
     position: relative;
-    background-position: center -100px;
+    background-position: center -250px;
 }
 
 .hps-hero:before {
-    background-color: #338833;
+    background-color: #1E2723;
     content: "";
     height: 100%;
     left: 0;
@@ -49,9 +53,14 @@ iframe {
     border-radius: 15px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
     margin-bottom: 1em;
+    overflow: hidden;
 }
 
 .tile figure {
+    margin-bottom: 1.5rem;
+}
+
+.tile .content ul {
     margin-bottom: 1.5rem;
 }
 
@@ -63,4 +72,86 @@ iframe {
 .subtitle {
     font-family: "Alegreya Sans", Georgia, serif;
     font-weight: 500;
+}
+
+.horizontal-widget .column:first-child {
+    background-color: #338833;
+    color: #fff;
+    position: relative;
+}
+
+.horizontal-widget .column:first-child > h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.horizontal-widget .column:not(:first-child) {
+    color: #fff;
+    background-color: #5b9f5b;
+    padding: 1.5rem;
+}
+
+.tiles {
+    margin: 2rem auto;
+}
+
+/* homepage specific */
+.hps-homepage-tiles .tile {
+    position: relative;
+}
+
+.hps-homepage-tiles > .tile:first-child {
+    padding-left: 0;
+}
+
+.hps-homepage-tiles > .tile:last-child {
+    padding-right: 0;
+}
+
+.hps-homepage-tiles h4 {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #fff;
+}
+
+.hps-homepage-tiles a.tile {
+    background-size: cover;
+}
+
+.hps-homepage-tiles a.tile:before {
+    background: rgba(30, 39, 35, 0.6);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: background .5s ease-out;
+}
+
+.hps-homepage-tiles a.tile:hover:before {
+    background: rgba(30, 39, 35, 0.8);
+}
+
+.hps-tile-guides {
+    background: url(/images/map.jpg) center;
+    min-height: 400px;
+}
+
+.hps-tile-activities {
+    background: url(/images/activities.jpg) center -200px;
+}
+
+.hps-tile-membership {
+    background: url(/images/hikers.jpg) center;
+}
+
+@media (max-width: 480px) {
+    .hps-hero {
+        background-position: center center;
+    }
 }

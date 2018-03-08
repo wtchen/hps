@@ -1,4 +1,4 @@
-<nav class="navbar is-primary has-shadow hps-main-nav" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary hps-main-nav" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item hps-logo" href="/">
             Hundred Peaks Section

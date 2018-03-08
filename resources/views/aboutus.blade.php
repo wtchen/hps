@@ -15,8 +15,8 @@
                 <p>If you have climbed 25 peaks on our list, we encourage you to join the section as a member. You will receive the latest bimonthly copy of
                     <i>The Lookout</i>, and you will be contributing to our illustrious organization, founded by naturalist Weldon Heald in 1946.
                 </p>
-                <p><b>Here's what's on for the next week!</b></p>
-                <iframe style="width:100%;height:670px;" scrolling="no" src="//vault.sierraclub.org/online-activities/iframe-entity.aspx?e=ent/0452&amp;v=list&amp;lat=&amp;lng=&amp;z=&amp;sp=&amp;dtb=&amp;dte=&amp;c=&amp;t=&amp;d=&amp;ss=false&amp;sc=false&amp;st=false&amp;dys=7&amp;mt=hybrid&amp;amp" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+                <p><b>Here's what's on for this month!</b></p>
+                <iframe src="//vault.sierraclub.org/online-activities/iframe-entity.aspx?e=ent/0452&amp;v=calendar&amp;lat=&amp;lng=&amp;z=&amp;sp=&amp;dtb=&amp;dte=&amp;c=&amp;t=&amp;d=&amp;ss=false&amp;sc=false&amp;st=false&amp;sd=false&amp;mt=hybrid&amp;dys&amp;cpgm=&amp;amp" style="width: 100%; height: 700px;" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
                 <p>Note that while leaders try to accomodate as many participants as possible on their hikes, there are sometimes restrictions to ensure that each participant for each outing has the necessary skills to complete the hike.</p>
                 <p>Besides hiking and leading hikes, lots of people volunteer to help the Section. Consider joining their ranks.</p>
                 <p>We would like to welcome you to our HPS family ... please join us as we hike and explore our wonderful mountain ranges.</p>
