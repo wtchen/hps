@@ -150,8 +150,34 @@ iframe {
     background: url(/images/hikers.jpg) center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1230px) {
     .hps-hero {
         background-position: center center;
+    }
+    
+    .hps-tile-activities {
+        background: url(/images/activities.jpg) center;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-widget .column:first-child > h3 {
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+    }
+
+    .hps-homepage-tiles a.tile {
+        min-height: 200px;
+    }
+
+    .hps-homepage-tiles > .tile:first-child {
+        padding: 0.75rem 0;
+    }
+
+    .hps-homepage-tiles > .tile:last-child {
+        padding: 0.75rem 0;
     }
 }
