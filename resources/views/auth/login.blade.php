@@ -37,9 +37,6 @@
                     <div class="control">
                         <button class="button is-link">Login</button>
                     </div>
-                    <div class="control">
-                        <button class="button is-text">Cancel</button>
-                    </div>
                 </div>
 
                 <a href="/password/reset">Forgot Your Password?</a><br/>

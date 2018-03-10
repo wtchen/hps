@@ -23,9 +23,6 @@
                     <div class="control">
                         <button class="button is-link">Send Password Reset Link</button>
                     </div>
-                    <div class="control">
-                        <button class="button is-text">Cancel</button>
-                    </div>
                 </div>
             </form>
         </div>

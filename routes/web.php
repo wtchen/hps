@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::view('/aboutus', 'aboutus');
+
+Route::get('/admin', 'Admin\AdminController@index')->name('admin');

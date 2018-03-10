@@ -21,6 +21,14 @@ body {
     padding: 1rem 2.5rem 1rem 1rem;
 }
 
+.hps-main-nav .logged-dropdown {
+    background: #7AAAA3;
+}
+
+.hps-main-nav .navbar-item.has-dropdown.logged-dropdown:hover .navbar-link {
+    background: #496661;
+}
+
 .hps-hero {
     background: url(/images/baldy.jpg);
     background-size: cover;
@@ -154,7 +162,7 @@ iframe {
     .hps-hero {
         background-position: center center;
     }
-    
+
     .hps-tile-activities {
         background: url(/images/activities.jpg) center;
     }
@@ -179,5 +187,15 @@ iframe {
 
     .hps-homepage-tiles > .tile:last-child {
         padding: 0.75rem 0;
+    }
+
+    .hps-main-nav .logged-dropdown {
+        background: #1E2723;
+        color: #fff;
+    }
+
+    .hps-main-nav .logged-dropdown .navbar-link,
+    .hps-main-nav .logged-dropdown .navbar-item {
+        color: #fff;
     }
 }
