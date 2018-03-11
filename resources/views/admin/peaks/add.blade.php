@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
+    @if (!empty($message))
+        <div class="notification is-success">
+            <button class="delete"></button>
+            {!! $message !!}
+        </div>
+    @endif
     <div class="content">
         <p>Field marked with * are required.</p>
         <form method="POST" action="{{ route('admin.peaks.add') }}">
@@ -12,7 +18,7 @@
                 <div class="field-body">
                     <div class="field is-narrow is-narrow-desktop">
                         <div class="control">
-                            <input class="input{{ $errors -> has('name') ? ' is-danger' : '' }}" type="text" placeholder="e.g. Sunday Peak">
+                            <input class="input{{ $errors -> has('name') ? ' is-danger' : '' }}" type="text" placeholder="e.g. Sunday Peak" name="name">
                         </div>
                         @if ($errors -> has('name'))
                             <p class="help is-danger">
@@ -29,7 +35,7 @@
                 <div class="field-body">
                     <div class="field is-narrow is-narrow-desktop">
                         <div class="control">
-                            <input class="input{{ $errors -> has('serial') ? ' is-danger' : '' }}" type="text" placeholder="e.g. 01A">
+                            <input class="input{{ $errors -> has('serial') ? ' is-danger' : '' }}" type="text" placeholder="e.g. 01A" name="serial">
                         </div>
                         @if ($errors -> has('serial'))
                             <p class="help is-danger">
@@ -45,7 +51,7 @@
                 </div>
                 <div class="field-body">
                     <div class="field is-narrow is-narrow-desktop">
-                        <input class="input{{ $errors -> has('elevation') ? ' is-danger' : '' }}" type="number" placeholder="Elevation*">
+                        <input class="input{{ $errors -> has('elevation') ? ' is-danger' : '' }}" type="number" placeholder="Elevation*" name="elevation">
                         @if ($errors -> has('elevation'))
                             <p class="help is-danger">
                                 This field is required
@@ -53,7 +59,7 @@
                         @endif
                     </div>
                     <div class="field is-narrow is-narrow-desktop">
-                        <input class="input" type="number" placeholder="Prominence">
+                        <input class="input" type="number" placeholder="Prominence" name="prominence">
                     </div>
                 </div>
             </div>
@@ -63,10 +69,10 @@
                 </div>
                 <div class="field-body">
                     <div class="field is-narrow is-narrow-desktop">
-                        <input class="input" type="number" placeholder="Latitude">
+                        <input class="input" type="number" placeholder="Latitude" name="lat">
                     </div>
                     <div class="field is-narrow is-narrow-desktop">
-                        <input class="input" type="number" placeholder="Longitude">
+                        <input class="input" type="number" placeholder="Longitude" name="long">
                     </div>
                 </div>
             </div>
@@ -77,7 +83,7 @@
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" placeholder="e.g. Tobias Peak 7½, Alta Sierra 7½">
+                            <input class="input" type="text" placeholder="e.g. Tobias Peak 7½, Alta Sierra 7½" name="usgs">
                         </div>
                     </div>
                 </div>
@@ -89,7 +95,7 @@
                 <div class="field-body">
                     <div class="field is-narrow is-narrow-desktop">
                         <div class="control">
-                            <input class="input" type="text" placeholder="e.g. 7N00">
+                            <input class="input" type="text" placeholder="e.g. 7N00" name="caltopo">
                         </div>
                     </div>
                 </div>
@@ -101,7 +107,7 @@
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" placeholder="e.g. http://www.hundredpeaks.org/newmaps/01AB_SUNDAY-BOHNA_PEAKS_cs06-23-2000_SMALL.JPG">
+                            <input class="input" type="text" placeholder="e.g. http://www.hundredpeaks.org/newmaps/01AB_SUNDAY-BOHNA_PEAKS_cs06-23-2000_SMALL.JPG" name="featured_image">
                         </div>
                     </div>
                 </div>
@@ -113,7 +119,7 @@
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <textarea class="textarea" placeholder="Write peak description here"></textarea>
+                            <textarea class="textarea" placeholder="Write peak description here" name="article_md"></textarea>
                         </div>
                     </div>
                 </div>

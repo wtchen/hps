@@ -22,3 +22,4 @@ Route::view('/aboutus', 'aboutus');
 Route::get('/admin', 'Admin\AdminController@index')->name('admin');
 Route::get('/admin/peaks', 'Admin\PeaksController@index')->name('admin.peaks');
 Route::get('/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
+Route::post('/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
