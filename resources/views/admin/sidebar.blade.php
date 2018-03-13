@@ -6,13 +6,13 @@
         General
     </p>
     <ul class="menu-list">
-        <li><a href="{{ route('admin') }}">Dashboard</a></li>
+        <li>@include('admin.components.menu-link', ['route' => 'admin', 'text' => 'Dashboard'])</li>
     </ul>
     <p class="menu-label">
         Administration
     </p>
     <ul class="menu-list">
-        <li><a href="{{ route('admin.peaks') }}">Peaks</a></li>
+        <li>@include('admin.components.menu-link', ['route' => 'admin.peaks', 'text' => 'Peaks'])</li>
     </ul>
     @if (Auth::user() -> is_super)
         <p class="menu-label">

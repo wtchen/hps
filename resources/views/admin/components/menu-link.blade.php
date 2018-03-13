@@ -1,0 +1,1 @@
+<a href="{{ route($route ?? '/') }}" @if (isset($route) && $route == Request::route() -> getName()) class="is-active" @endif>{{ $text ?? $route ?? 'Link' }}</a>
