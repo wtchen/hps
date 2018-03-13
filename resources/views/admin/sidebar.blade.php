@@ -1,17 +1,36 @@
 <aside class="menu">
+    <h3 class="menu-label title">
+        Site Management
+    </h3>
     <p class="menu-label">
         General
     </p>
     <ul class="menu-list">
-        <li><a href="{{ route('admin') }}">Admin Panel Home</a></li>
+        <li><a href="{{ route('admin') }}">Dashboard</a></li>
     </ul>
     <p class="menu-label">
         Administration
     </p>
     <ul class="menu-list">
         <li><a href="{{ route('admin.peaks') }}">Peaks</a></li>
-        @if (Auth::user() -> is_super)
+    </ul>
+    @if (Auth::user() -> is_super)
+        <p class="menu-label">
+            Meta
+        </p>
+        <ul class="menu-list">
             <li><a href="/admin/users">Users</a></li>
-        @endif
+        </ul>
+    @endif
+    <p class="menu-label">
+        {{ Auth::user() -> name }}
+    </p>
+    <ul class="menu-list">
+        <li><a>Settings</a></li>
+        <li>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                Log Out
+            </a>
+        </li>
     </ul>
 </aside>

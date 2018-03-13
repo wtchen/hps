@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Hundred Peaks Section') }}</title>
+    <title>Hundred Peaks Section @if ($title) | {{ $title }} @endif</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500" rel="stylesheet">

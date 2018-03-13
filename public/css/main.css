@@ -158,6 +158,48 @@ iframe {
     background: url(/images/hikers.jpg) center;
 }
 
+/* peak table specific */
+.hps-peak-table tr.delisted {
+    background-color: #f0f0f0;
+    color: #aaa;
+    font-style: italic;
+}
+
+.hps-peak-table tr.delisted:hover {
+    background-color: #f1f1f1;
+}
+
+.hps-peak-table tr.delisted .tag {
+    visibility: hidden;
+}
+
+.hps-peak-table tr:hover .tag {
+    visibility: visible;
+}
+
+.hps-peak-table tr.suspended {
+    color: #aaa;
+}
+
+.hps-peak-table tr .tag {
+    pointer-events: none;
+    user-select: none;
+    margin-left: 10px;
+}
+
+.hps-peak-table .actions .button {
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.hps-peak-table tr:hover .actions .button {
+    color: #363636;
+}
+
+.hps-peak-table .actions .button.remove:hover {
+    color: #AA4040;
+}
+
 @media (max-width: 1230px) {
     .hps-hero {
         background-position: center center;

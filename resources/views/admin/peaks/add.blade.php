@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-    @if (!empty($message))
+    @if (session('status'))
         <div class="notification is-success">
             <button class="delete"></button>
-            {!! $message !!}
+            {!! session('status') !!}
         </div>
     @endif
     <div class="content">

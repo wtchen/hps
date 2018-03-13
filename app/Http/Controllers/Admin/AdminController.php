@@ -30,6 +30,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.home', ['name' => 'Site Management']);
+        return view('admin.home', ['title' => 'Welcome to the HPS Site Management System']);
     }
 }

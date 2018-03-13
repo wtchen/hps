@@ -21,5 +21,6 @@ Route::view('/aboutus', 'aboutus');
 
 Route::get('/admin', 'Admin\AdminController@index')->name('admin');
 Route::get('/admin/peaks', 'Admin\PeaksController@index')->name('admin.peaks');
-Route::get('/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
-Route::post('/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
+Route::match(['get', 'post'], '/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
+Route::get('/admin/peaks/delete/{serial}', 'Admin\PeaksController@deletePage')->name('admin.peaks.deletePage');
+Route::post('/admin/peaks/delete', 'Admin\PeaksController@delete')->name('admin.peaks.delete');

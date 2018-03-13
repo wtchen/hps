@@ -1,11 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
+    @if (session('status'))
+        <div class="notification is-success">
+            <button class="delete"></button>
+            {!! session('status') !!}
+        </div>
+    @endif
     <div class="buttons">
         <a class="button is-primary" href="{{ route('admin.peaks.add') }}">Add Peak</a>
     </div>
     <div class="content">
-        <table class="table is-hoverable">
+        <table class="table hps-peak-table">
             <thead>
             <tr>
                 <th></th>
@@ -24,11 +30,21 @@
             </tfoot>
             <tbody>
             @foreach (App\Peak::all() as $peak)
-                <tr>
+                <tr @if ($peak['status'] == 0) class="delisted" @endif>
                     <td>{{ $peak -> serial }}</td>
-                    <td>{{ $peak -> name }}</td>
+                    <td>
+                        {{ $peak -> name }}
+                        @if ($peak['status'] == 0)
+                            <span class="tag is-light">Delisted</span>
+                        @elseif ($peak['status'] == 2)
+                            <span class="tag is-light">Suspended</span>
+                        @endif
+                    </td>
                     <td>{{ $peak -> elevation }}'</td>
-                    <td></td>
+                    <td class="actions">
+                        <a class="button icon"><i class="fas fa-pencil-alt"></i></a>
+                        <a class="button icon remove" href="{{ route('admin.peaks.deletePage', ['serial' => $peak -> serial]) }}"><i class="fas fa-times"></i></a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
