@@ -30,7 +30,7 @@
             </tfoot>
             <tbody>
             @foreach (App\Peak::all() as $peak)
-                <tr @if ($peak['status'] == 0) class="delisted" @endif>
+                <tr @if ($peak['status'] == 0) class="delisted" @elseif ($peak['status'] == 2) class="suspended" @endif>
                     <td>{{ $peak -> serial }}</td>
                     <td>
                         {{ $peak -> name }}
