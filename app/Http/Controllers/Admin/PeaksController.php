@@ -19,7 +19,8 @@ class PeaksController extends AdminController
      */
     public function index()
     {
-        return view('admin.peaks', ['title' => 'Manage Peaks']);
+        $peaks = Peak::orderBy('region_id') -> get();
+        return view('admin.peaks', ['title' => 'Manage Peaks']) -> with('peaks', $peaks);
     }
 
     public function add(Request $request)
@@ -34,13 +35,13 @@ class PeaksController extends AdminController
             $peak = Peak::create($data);
             return Redirect::route('admin.peaks') -> with('status', '<b>' . $peak['name'] . '</b> (' . $peak['serial'] . ') added');
         }
-        return view('admin.peaks.add', ['title' => 'Add Peak']);
+        return view('admin.peaks.edit', ['title' => 'Add Peak']);
     }
 
     public function deletePage($serial)
     {
         $peak = Peak::where('serial', $serial) -> first();
-        return view('admin.peaks.delete', ['title' => 'Delete Peak']) -> with(['peak' => $peak]);
+        return view('admin.peaks.delete', ['title' => 'Delete Peak', 'peak' => $peak]);
     }
 
     public function delete(Request $request) {
@@ -50,5 +51,23 @@ class PeaksController extends AdminController
         $data = $validatedData;
         $peak = Peak::where('serial', $data['serial']) -> delete();
         return Redirect::route('admin.peaks') -> with('status', '<b>' . $peak['name'] . '</b> (' . $peak['serial'] . ') deleted!');
+    }
+
+    public function editPage($serial)
+    {
+        $peak = Peak::where('serial', $serial) -> first();
+        return view('admin.peaks.edit', ['title' => 'Edit ' . $peak -> name, 'peak' => $peak, 'post' => 'admin.peaks.save']);
+    }
+
+    public function save(Request $request) {
+        $validatedData = $request -> validate([
+            'name' => 'required|max:255',
+            'serial' => 'required|max:10',
+            'elevation' => 'required'
+        ]);
+        $data = $validatedData + $request -> all();
+        $peak = Peak::where('serial', $data['serial']) -> first() -> fill($data);
+        $peak -> save();
+        return Redirect::route('admin.peaks') -> with('status', '<b>' . $peak['name'] . '</b> (' . $peak['serial'] . ') updated');
     }
 }

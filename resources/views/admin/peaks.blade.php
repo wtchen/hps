@@ -17,6 +17,7 @@
                 <th></th>
                 <th>Peak</th>
                 <th>Elevation</th>
+                <th>Region</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -25,11 +26,12 @@
                 <th></th>
                 <th>Peak</th>
                 <th>Elevation</th>
+                <th>Region</th>
                 <th>Actions</th>
             </tr>
             </tfoot>
             <tbody>
-            @foreach (App\Peak::all() as $peak)
+            @foreach ($peaks as $peak)
                 <tr @if ($peak['status'] == 0) class="delisted" @elseif ($peak['status'] == 2) class="suspended" @endif>
                     <td>{{ $peak -> serial }}</td>
                     <td>
@@ -41,8 +43,9 @@
                         @endif
                     </td>
                     <td>{{ $peak -> elevation }}'</td>
+                    <td>{{ $peak -> region -> name }}</td>
                     <td class="actions">
-                        <a class="button icon"><i class="fas fa-pencil-alt"></i></a>
+                        <a class="button icon" href="{{ route('admin.peaks.editPage', ['serial' => $peak -> serial]) }}"><i class="fas fa-pencil-alt"></i></a>
                         <a class="button icon remove" href="{{ route('admin.peaks.deletePage', ['serial' => $peak -> serial]) }}"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>

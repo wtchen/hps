@@ -24,3 +24,5 @@ Route::get('/admin/peaks', 'Admin\PeaksController@index')->name('admin.peaks');
 Route::match(['get', 'post'], '/admin/peaks/add', 'Admin\PeaksController@add')->name('admin.peaks.add');
 Route::get('/admin/peaks/delete/{serial}', 'Admin\PeaksController@deletePage')->name('admin.peaks.deletePage');
 Route::post('/admin/peaks/delete', 'Admin\PeaksController@delete')->name('admin.peaks.delete');
+Route::get('/admin/peaks/edit/{serial}', 'Admin\PeaksController@editPage')->name('admin.peaks.editPage');
+Route::post('/admin/peaks/save', 'Admin\PeaksController@save')->name('admin.peaks.save');
