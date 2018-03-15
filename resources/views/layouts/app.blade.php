@@ -10,6 +10,10 @@
 
     <title>Hundred Peaks Section @if (isset($title)) | {{ $title }} @endif</title>
 
+    <!-- Mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500" rel="stylesheet">

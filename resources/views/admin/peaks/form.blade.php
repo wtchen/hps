@@ -47,10 +47,10 @@
         </div>
         <div class="field-body">
             <div class="field is-narrow is-narrow-desktop">
-                <input class="input" type="number" placeholder="Latitude" name="lat" value="{{ HpsView::value('lat') }}">
+                <input class="input" type="number" step="0.0000001" placeholder="Latitude" name="lat" value="{{ HpsView::value('lat') }}">
             </div>
             <div class="field is-narrow is-narrow-desktop">
-                <input class="input" type="number" placeholder="Longitude" name="long" value="{{ HpsView::value('long') }}">
+                <input class="input" type="number" step="0.0000001" placeholder="Longitude" name="long" value="{{ HpsView::value('long') }}">
             </div>
         </div>
     </div>
