@@ -26,3 +26,6 @@ Route::get('/admin/peaks/delete/{serial}', 'Admin\PeaksController@deletePage')->
 Route::post('/admin/peaks/delete', 'Admin\PeaksController@delete')->name('admin.peaks.delete');
 Route::get('/admin/peaks/edit/{serial}', 'Admin\PeaksController@editPage')->name('admin.peaks.editPage');
 Route::post('/admin/peaks/save', 'Admin\PeaksController@save')->name('admin.peaks.save');
+
+Route::get('/hpslist', 'ListController@index')->name('hpslist');
+Route::get('/hpslist.htm', function () { Redirect::route('hpslist', 301); });
