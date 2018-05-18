@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddRegionIdToPeaksTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddRegionIdToPeaksTable extends Migration
     public function up()
     {
         Schema::table('peaks', function (Blueprint $table) {
-            $table -> integer('region_id') -> unsigned() ->default(1) -> after('status');
+            $table->integer('region_id')->unsigned()->default(1)->after('status');
         });
     }
 
@@ -26,7 +26,7 @@ class AddRegionIdToPeaksTable extends Migration
     public function down()
     {
         Schema::table('peaks', function (Blueprint $table) {
-            $table -> dropColumn('region_id');
+            $table->dropColumn('region_id');
         });
     }
 }

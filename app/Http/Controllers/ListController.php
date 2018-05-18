@@ -9,8 +9,9 @@ class ListController extends Controller
 {
     public function index()
     {
-        $peaks = Peak::orderBy('region_id') -> get();
+        $peaks = Peak::orderBy('region_id')->get();
         $regions = Region::all();
+
         return view('hpslist', ['title' => 'Peak List', 'peaks' => $peaks, 'regions' => $regions]);
     }
 }

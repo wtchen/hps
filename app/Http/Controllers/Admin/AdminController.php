@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
-use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -19,6 +19,7 @@ class AdminController extends Controller
         $this->middleware(function ($request, $next) {
             $user = Auth::user();
             View::share('user', $user);
+
             return $next($request);
         });
     }
