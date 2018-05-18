@@ -11,4 +11,4 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/assets/bulma/bulma.sass', 'public/css');
+mix.sass('resources/assets/bulma/sass/mystyles.scss', 'public/css/bulma.css');
