@@ -1,0 +1,53 @@
+// 1. Import the initial variables
+@import "../sass/utilities/initial-variables";
+@import "../sass/utilities/functions";
+
+// 2. Set your own initial variables
+// Update blue
+$green: #338833;
+$green-invert: #fff;
+$blue-green: #7AAAA3;
+$blue-green-invert: #fff;
+$red: #AA4040;
+$red-invert: #fff;
+$outer-space: #1E2723;
+$outer-space-invert: #fff;
+// Add a serif family
+$family-sans-serif: "Source Sans Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new green as the primary color
+$primary: $green;
+$primary-invert: $green-invert;
+// Use the new blue as the secondary color
+$secondary: $outer-space;
+$secondary-invert: $outer-space-invert;
+// Use the new sans-serif family
+$family-primary: $family-sans-serif;
+// Change the default header color
+$title-color: $outer-space;
+$subtitle-color: $outer-space;
+// Change default text color
+$text: $outer-space;
+
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+// 5. Add new color variables to the color map.
+@import "../sass/utilities/derived-variables.sass";
+$addColors: (
+        "blue-green": ($blue-green, $blue-green-invert),
+        "secondary": ($secondary, $secondary-invert),
+        "twitter":($twitter, $twitter-invert),
+        "linkedin": ($linkedin, $linkedin-invert),
+        "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Bulma
+@import "../bulma";
