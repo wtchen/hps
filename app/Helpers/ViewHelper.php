@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Helpers;
 
-class ViewHelper {
+class ViewHelper
+{
     /**
      * @param string $field User-id
      *
@@ -10,6 +12,7 @@ class ViewHelper {
     public static function value($field)
     {
         $model = session('viewHelperModel');
-        return old($field) ?? $model -> $field ?? '';
+
+        return old($field) ?? $model->$field ?? '';
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddNamesToPeaksTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddNamesToPeaksTable extends Migration
     public function up()
     {
         Schema::table('peaks', function (Blueprint $table) {
-            $table -> string('name') -> after('serial');
+            $table->string('name')->after('serial');
         });
     }
 
@@ -26,7 +26,7 @@ class AddNamesToPeaksTable extends Migration
     public function down()
     {
         Schema::table('peaks', function (Blueprint $table) {
-            $table -> dropColumn('name');
+            $table->dropColumn('name');
         });
     }
 }
