@@ -28,4 +28,6 @@ Route::get('/admin/peaks/edit/{serial}', 'Admin\PeaksController@editPage')->name
 Route::post('/admin/peaks/save', 'Admin\PeaksController@save')->name('admin.peaks.save');
 
 Route::get('/hpslist', 'ListController@index')->name('hpslist');
-Route::get('/hpslist.htm', function () { Redirect::route('hpslist', 301); });
+Route::get('/hpslist.htm', function () {
+    Redirect::route('hpslist', 301);
+});
